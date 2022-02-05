@@ -1,0 +1,140 @@
+
+////////////////////////////////standartanimation
+.gallery__block-inactive{
+}
+
+.gallery__block-active{
+    margin-top: 20%;
+    transition: 0.5s;
+}
+
+@keyframes gallery__card_animation {
+    from{
+        box-shadow: 0px 0px 3px 3px #d5ceff;
+    }
+    25%{
+    }
+    50%{
+        width: 75%;
+        margin-top: -150%;
+    }
+    99%{
+        overflow-y: hidden;
+        box-shadow: 0px 0px 3px 3px #d5ceff;
+    }
+    to{
+        margin-top: -150%;
+        width: 300%;
+        height: 75%;
+        overflow-y: scroll;
+        box-shadow: 0px 0px 3px 3px #f1f1f1;
+    }
+}
+
+.gallery__card-active{
+    animation-fill-mode: forwards;
+    animation-name: gallery__card_animation;
+    animation-duration: 1.5s;
+    width: 75%;
+}
+
+.gallery__card-active .gallery__content{
+    height: 200%;
+}
+////////////////////////////////bottomanimation
+.gallery__block-inactive{
+}
+
+.gallery__block-active:first-child + .gallery__block{
+    margin-top: 20%;
+    transition: 0.5s;
+}
+
+@keyframes gallery__card_animation-bottom {
+    from{
+        box-shadow: 0px 0px 3px 3px #d5ceff;
+    }
+    25%{
+    }
+    50%{
+        width: 75%;
+        margin-bottom: -150%;
+    }
+    99%{
+        overflow-y: hidden;
+        box-shadow: 0px 0px 3px 3px #d5ceff;
+    }
+    to{
+        margin-bottom: -150%;
+        width: 300%;
+        height: 75%;
+        overflow-y: scroll;
+        box-shadow: 0px 0px 3px 3px #f1f1f1;
+    }
+}
+
+.gallery__block-active:first-child .gallery__card-active{
+    animation-fill-mode: forwards;
+    animation-name: gallery__card_animation-bottom;
+    animation-duration: 1.5s;
+    width: 75%;
+}
+
+.gallery__button-active{
+}
+.gallery__button-inactive{
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .gallery__block-active:first-child + .gallery__block{
+        margin-top: 0;
+    }
+
+    .gallery__block-inactive{
+    }
+
+    
+    .gallery__block-active{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "active_card active_card"
+        "first_card second_card";
+        height: 100%;
+        width: 70%;
+        margin: 5% auto 0 auto;
+        transition: 2s;
+    }
+
+    .gallery__card-active{
+        animation-name: none;
+        grid-area: active_card;
+        width: 100%;
+    }
+
+    .gallery__block-active .galery__card-inactive:nth-child(1){
+        justify-self: start ;
+        grid-area: first_card;
+    }
+
+    .gallery__block-active .galery__card-inactive:nth-child(2){
+        justify-self: end;
+        grid-area: second_card;
+    }
+   
+    .gallery__block-active:first-child .gallery__card-active{
+        animation-name: none;
+        width: 100%;
+    }
+
+    .gallery__card-active .gallery__content{
+        height: 100%;
+    }
+    
+    .gallery__button-active{
+    }
+    .gallery__button-inactive{
+    }
+}
+
