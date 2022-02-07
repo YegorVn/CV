@@ -7,99 +7,121 @@
 .gallery{
     height: 100%;
     width: 100%;
-    
 }
 
 .gallery__block{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 70%;
-    height: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10%;
-}
-
-.gallery__card{
-    box-sizing: border-box;
-    cursor: pointer;
-    background-color: white;
-    border-radius: 2%;
-    border: 1px solid rgb(241, 241, 241);
-    padding: 1rem 1rem ;
-}
-
-//////////////////////////////////////////////////anim
-@keyframes gallery__card_animation {
-    from{
-        width: 25%;
-        height: 100%;
-    }
-    25%{
-        height: 100%;
-    }
-    50%{
-        height: 100%;
-        opacity: 1;
-    }
-    99%{
-        margin-top: -3%;
-        opacity: 0;
-        order: 0;
-    }
-    to{
-        height: 100%;
-        width: 25%;
-        order: -1;
-        margin-bottom: 5%;
-    }
-}
-
-.gallery__card-inactive{
-    width: 25%;
-    height: 100%;
-}
-
-.gallery__card-active{
-    animation-fill-mode: forwards;
-    animation-name: gallery__card_animation;
-    animation-duration: 2s;
-}
-//////////////////////////////////////////////////////
-
-.gallery__content{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(3, 1fr);
+    height: 30%;
     align-items: center;
-    width: 100%;
+    justify-content: center;
 }
 
-.gallery_taglist{
-    font-size: var(--xxs);
-    display: flex;
-    color: gray;
-    margin-left: auto;
-    width: 100%;
+.gallery__block:first-child{
+    margin-top: 1%;
 }
 
-.gallery__title{
-    font-size: var(--l);
-    width: 50%;
+
+
+@media (min-width: 576px) {  }
+
+@media (min-width: 768px) {  }
+@media screen and (max-width: 992px){
+    .gallery__block{
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        height: fit-content;
+        transition: 1s;
+        margin: 5% auto 0 auto;
+        margin-top: 0.1rem;
+        width: 95%;
+    }
+
+    .gallery__card{
+        margin-top: 1rem;
+        width: 100% !important;
+        background-color: white;
+        padding: 1rem 2rem ;
+    }
+
+    .gallery__block-inactive .gallery__card-inactive:nth-child(1){
+        grid-area: first_card;
+        justify-self: start;
+    }
+    
+    .gallery__block-inactive .gallery__card-inactive:nth-child(2){
+        grid-area: second_card;
+        justify-self: start;
+    }
+    
+    .gallery__block-inactive .gallery__card-inactive:nth-child(3){
+        grid-area: third_card;
+        justify-self: start;
+    }
+
 }
 
-.gallery__subtitle{
-    font-size: var(--xs);
-    margin-top: 1rem;
-    color: gray;
-    width: 100%;
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    .gallery__block{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "first_card second_card"
+            "third_card third_card";
+        width: 80%;
+        height: 60%;
+        margin: 5% auto 0 auto;
+        align-items: center;
+        justify-content: center;
+        transition: 1s;
+    }
+
+    .gallery__card{
+        width: 95%;
+        height: 95%;
+        box-sizing: border-box;
+        background-color: white;
+        border-radius: 7px;
+        border: 1px solid #f1f1f1;
+        padding: 1rem 2rem ;
+    }
+    
+    .gallery__block-inactive .gallery__card-inactive:nth-child(1){
+        grid-area: first_card;
+        justify-self: start;
+    }
+    
+    .gallery__block-inactive .gallery__card-inactive:nth-child(2){
+        grid-area: second_card;
+        justify-self: end;
+    }
+    
+    .gallery__block-inactive .gallery__card-inactive:nth-child(3){
+        grid-area: third_card;
+        width: 100%;
+        justify-self: start;
+    }
+
+    
 }
 
-.gallery__text{
-    font-size: var(--xs);
-    margin-top: 1rem;
-    width: 100%;
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .gallery__block{
+        width: 90%;
+    }
+    .gallery__block{
+        margin: 5% auto 0 auto;
+    }
 }
 
+@media screen and (min-width: 1400px){  
+    .gallery__block{
+        width: 70%;
+        margin: 5% 10% 0 auto;
+    }
+ }
 
 

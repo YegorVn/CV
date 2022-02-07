@@ -1,0 +1,122 @@
+.gallery__card{
+    width: 95%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 7px;
+    border: 1px solid #f1f1f1;
+    padding: 1rem 2rem ;
+}
+
+.gallery__card:nth-child(1){
+    justify-self: start;
+}
+
+.gallery__card:nth-child(2){
+    justify-self: center;
+}
+
+.gallery__card:nth-child(3){
+    justify-self: end;
+}
+
+.gallery__row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gallery__content{
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery__taglist{
+    font-size: var(--xxs);
+    display: flex;
+    flex-wrap: wrap;
+    color: gray;
+    width: fit-content;
+    margin-left: auto;
+}
+
+.gallery__tag{
+    margin-left: auto;
+}
+
+.gallery__title{
+    font-size: var(--xl);
+    width: fit-content;
+}
+
+.gallery__subtitle{
+    font-size: var(--xs);
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.gallery__text{
+    font-size: var(--xs);
+    margin-top: 0.75rem;
+    width: 100%;
+}
+
+.gallery__text ul{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 1.4rem;
+}
+
+.gallery__links{
+    margin-top: 0.75rem;
+    display: flex;
+    flex-flow: column;
+}
+
+.gallery__button{
+    background-color: #ffffff;
+    background-image: linear-gradient(156.44deg, #E3DEFF 1%, #beb5f797 100%, #bcb4ff2f 75%, #7569ff00 250%);
+    letter-spacing: 0.2em;
+    padding: 0.7rem 0.5rem;
+    cursor: pointer;
+    border: none;
+    margin-top: auto;
+    transition:  0.7s;
+    font-size: var(-xxs);
+    color:rgb(41, 41, 41);
+    font-weight: bold;
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.gallery__button span{
+}
+
+.gallery__button img{
+    margin-left: 0.1rem;
+    margin-top: 0.1rem;
+    opacity: 0;
+    position: absolute;
+    transition: 0.7s;
+    display: inline-block;
+}
+
+.gallery__button:hover img{
+    opacity: 1;
+}
+
+.gallery__button:hover{
+    background-color: rgb(255, 159, 255);
+    box-shadow: 0 0 1px 1px #d2cbff;
+}
+
+.gallery__close{
+    cursor: pointer;
+    border: none;
+    width: fit-content;
+    background-color: transparent;
+}

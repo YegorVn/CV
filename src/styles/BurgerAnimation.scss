@@ -31,7 +31,7 @@
 
   .burger-button__circle span:last-child{
     margin-bottom: 0px;
-    }
+  }
   
   #span1 {
     transform-origin: 4px 0px;
@@ -47,11 +47,13 @@
     margin-top: 0px;
     margin-left: 3px;
   }
+
   .burger-button__circle input:checked ~ #span2 {
     background-color: #3a3a3a;
     transform: rotate(495deg) translate(0px);   
     margin-left: 3px;
   }
+
   .burger-button__circle input:checked ~ #span3 {
     background-color: #3a3a3a;
     transform: rotate(45deg);
