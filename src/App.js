@@ -40,11 +40,11 @@ function App() {
     ],
     [
       {
-        title: "CodePen",
+        title: "Plain Js",
         text: "Несколько небольших проектов на codepen",
         tech: ["HTML, CSS, JS"],
-        links: ["https://codepen.io/midomen"],
-        tag: ["Commerical"],
+        links: ["https://github.com/YegorVn/hearts", "https://github.com/YegorVn/clicker"],
+        tag: ["Pet-project"],
       },
       {
         title: "Админка",
