@@ -53,7 +53,7 @@ const FirstPage = () => {
                 <div className="burger__subtitle uppercase">Опыт работы</div>
                 <div className="burger__text">
                   Фриланс (1 год),<br></br>
-                  Студия Юрия Клименко, Junior React Frontend (полгода)
+                  Студия Юрия Клименко, Junior React Frontend (1 год)
                 </div>
               </div>
               <div className="burger__subblock">
