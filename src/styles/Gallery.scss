@@ -13,21 +13,23 @@
     display: grid;
     position: relative;
     grid-template-columns: repeat(3, 1fr);
-    height: 30%;
+    height: 20rem;
     align-items: center;
     justify-content: center;
 }
 
 .gallery__block:first-child{
-    margin-top: 1%;
+    margin-top: 0;
+    padding-top: 3rem;
 }
 
-
+.gallery__block:last-child{
+    padding-bottom: 3rem;
+}
 
 @media (min-width: 576px) {  }
-
 @media (min-width: 768px) {  }
-@media screen and (max-width: 992px){
+@media screen and (max-width: 1200px){
     .gallery__block{
         display: flex;
         flex-flow: column;
@@ -43,76 +45,31 @@
         margin-top: 1rem;
         width: 100% !important;
         background-color: white;
-        padding: 1rem 2rem ;
+        padding: 1rem 2rem;
+        height: 20rem !important;
+        transition: 1s;
     }
-
-    .gallery__block-inactive .gallery__card-inactive:nth-child(1){
-        grid-area: first_card;
-        justify-self: start;
-    }
-    
-    .gallery__block-inactive .gallery__card-inactive:nth-child(2){
-        grid-area: second_card;
-        justify-self: start;
-    }
-    
-    .gallery__block-inactive .gallery__card-inactive:nth-child(3){
-        grid-area: third_card;
-        justify-self: start;
-    }
-
 }
 
 @media screen and (min-width: 992px) and (max-width: 1200px){
     .gallery__block{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-areas: 
-            "first_card second_card"
-            "third_card third_card";
-        width: 80%;
-        height: 60%;
         margin: 5% auto 0 auto;
-        align-items: center;
-        justify-content: center;
-        transition: 1s;
+        margin-top: 0.1rem;
+        width: 65%;
     }
 
     .gallery__card{
-        width: 95%;
-        height: 95%;
-        box-sizing: border-box;
+        margin-top: 1.5rem;
+        width: 100% !important;
         background-color: white;
-        border-radius: 7px;
-        border: 1px solid #f1f1f1;
-        padding: 1rem 2rem ;
+        padding: 1rem 2rem;
+        height: 20rem !important;
     }
-    
-    .gallery__block-inactive .gallery__card-inactive:nth-child(1){
-        grid-area: first_card;
-        justify-self: start;
-    }
-    
-    .gallery__block-inactive .gallery__card-inactive:nth-child(2){
-        grid-area: second_card;
-        justify-self: end;
-    }
-    
-    .gallery__block-inactive .gallery__card-inactive:nth-child(3){
-        grid-area: third_card;
-        width: 100%;
-        justify-self: start;
-    }
-
-    
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
     .gallery__block{
         width: 90%;
-    }
-    .gallery__block{
         margin: 5% auto 0 auto;
     }
 }

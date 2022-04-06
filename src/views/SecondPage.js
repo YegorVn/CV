@@ -7,11 +7,6 @@ import {Card} from '../components/Card'
 
 const SecondPage = ({data}) => {
     const [card, setCard] = useState("");
-    const activeCard = useRef();
-    const inactiveCard = useRef();
-
-    
-
     return (
     <div className="second-page">
       <div className="gallery">

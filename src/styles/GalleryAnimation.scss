@@ -5,38 +5,51 @@
     @keyframes #{$name} {
         from{
             box-shadow: 0px 0px 3px 3px #d5ceff;
+            overflow: hidden;
         }
         25%{
         }
         50%{
             width: 75%;
             #{$shiftDir}: $shift;
+            box-shadow: 0px 0px 5px 5px #bdb1ff;
         }
         99%{
+            box-shadow: 0px 0px 1px 1px #bdb1ff;
             overflow-y: hidden;
-            box-shadow: 0px 0px 3px 3px #d5ceff;
         }
         to{
             #{$shiftDir}: $shift;
             width: 300%;
             height: $height;
             overflow-y: scroll;
-            box-shadow: 0px 0px 3px 3px #f1f1f1;
+            border-radius: 0px;
+            box-shadow: none;
         }
     }
 }
 
+.gallery__block-active{
+    transition: 0.5s;
+}
 
+.gallery__card-active{
+    animation-fill-mode: forwards;
+    animation-name: gallery__card_animation;
+    animation-duration: 1.5s;
+    width: 75%;
+}
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
     .gallery__block-active:first-child + .gallery__block{
         margin-top: 0;
     }
 
     .gallery__card-active{
-        height: 40rem;
+        height: 30rem !important;
         animation-name: none;
-        width: 100%;
+        width: 65%;
+        overflow-y: scroll;
     }
    
     .gallery__block-active:first-child .gallery__card-active{
@@ -45,77 +58,25 @@
     }
 
     .gallery__card-active .gallery__content{
-        height: 100%;
+        height: fit-content;
     }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1200px) {
-    .gallery__block-active:first-child + .gallery__block{
-        margin-top: 0;
-    }
+
+@media screen and (min-width: 1200px){
+    @include animation(gallery__card_animation, margin-top, -55rem, 30rem);
+    @include animation(gallery__card_animation-bottom, margin-bottom, -55rem, 30rem);
 
     .gallery__block-active{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: 
-        "active_card active_card"
-        "first_card second_card";
-        height: 100%;
-        width: 70%;
-        margin: 5% auto 0 auto;
-        transition: 2s;
-    }
-
-    .gallery__card-active{
-        animation-name: none;
-        grid-area: active_card;
-        width: 100%;
-    }
-
-    .gallery__block-active .galery__card-inactive:nth-child(1){
-        justify-self: start ;
-        grid-area: first_card;
-    }
-
-    .gallery__block-active .galery__card-inactive:nth-child(2){
-        justify-self: end;
-        grid-area: second_card;
-    }
-   
-    .gallery__block-active:first-child .gallery__card-active{
-        animation-name: none;
-        width: 100%;
+        margin-top: 35rem;
     }
 
     .gallery__card-active .gallery__content{
-        height: 100%;
-    }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1400px) {
-    @include animation(gallery__card_animation, margin-top, -170%, 120%);
-    @include animation(gallery__card_animation-bottom, margin-bottom, -170%, 100%);
-
-    .gallery__block-active{
-        margin-top: 30%;
-        transition: 0.5s;
+        height: fit-content;
     }
 
-    .gallery__card-active{
-        animation-fill-mode: forwards;
-        animation-name: gallery__card_animation;
-        animation-duration: 1.5s;
-        width: 75%;
-    }
-
-    .gallery__card-active .gallery__content{
-        height: 200%;
-    }
-
-    ////////////////////////////////bottomanimation
     .gallery__block-active:first-child + .gallery__block{
-        margin-top: 30%;
+        margin-top: 35rem;
         transition: 0.5s;
     }
 
@@ -125,43 +86,4 @@
         animation-duration: 1.5s;
         width: 75%;
     }
-    ////////////////////////////////
 }
-
-@media screen and (min-width: 1400px){
-    @include animation(gallery__card_animation, margin-top, -175%, 125%);
-    @include animation(gallery__card_animation-bottom, margin-bottom, -190%, 135%);
-
-    .gallery__block-active{
-        margin-top: 25%;
-        transition: 0.5s;
-    }
-
-
-    .gallery__card-active{
-        animation-fill-mode: forwards;
-        animation-name: gallery__card_animation;
-        animation-duration: 1.5s;
-        width: 75%;
-    }
-
-    .gallery__card-active .gallery__content{
-        height: 200%;
-    }
-
-    ////////////////////////////////bottomanimation
-    .gallery__block-active:first-child + .gallery__block{
-        margin-top: 30%;
-        transition: 0.5s;
-    }
-
-    .gallery__block-active:first-child .gallery__card-active{
-        animation-fill-mode: forwards;
-        animation-name: gallery__card_animation-bottom;
-        animation-duration: 1.5s;
-        width: 75%;
-    }
-    ////////////////////////////////
-}
-
-

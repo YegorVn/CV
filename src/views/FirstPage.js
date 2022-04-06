@@ -6,6 +6,7 @@ import hh from "../images/icons/hh.png";
 import react from "../images/icons/react.svg";
 import redux from "../images/icons/redux.svg";
 import html from "../images/icons/html.png";
+import tg from "../images/icons/tg.png";
 import css from "../images/icons/css.png";
 import "../styles/Modifiers.scss";
 import "../styles/Burger.scss";
@@ -25,11 +26,14 @@ const FirstPage = () => {
           <>
             <div className="burger__block">
               <div className="burger__subblock">
-                <div className="burger__title">Внуков Егор CV</div>
+                <div className="burger__title">
+                  Внуков Егор
+                  <div className="burger__lemma">Frontend разработчик</div>
+                </div>
                 <div className="burger__subtitle uppercase">Технологии</div>
                 <ul className="burger__tehlist">
                   {[
-                    { text: "React", color: "#9de7fb", icon: react },
+                    { text: "React", color: "#fff", icon: react },
                     { text: "Redux-Saga", color: "#707070", icon: redux },
                     { text: "HTML5", color: "#d85331", icon: html },
                     { text: "CSS3", color: "#0d3ea2", icon: css },
@@ -55,21 +59,34 @@ const FirstPage = () => {
               <div className="burger__subblock">
                 <div className="burger__subtitle uppercase">Образование</div>
                 <div className="burger__text">
-                  МЭИ (2018-2020)
-                  <span>
+                  <div>
+                    <span>Московский Энергетический Институт</span>
                     <br></br>
-                  </span>
-                  СФУ (2021-2022)
-                </div>
-              </div>
-              <div className="burger__subblock">
-                <div className="burger__subtitle uppercase">Контакты</div>
-                <div className="burger__text">
-                  <div className="burger__row">
-                    <img src={mail} width={20} height={20} alt="" />
-                    <span>midomen@yandex.ru</span>
+                    <span>Направление: ИВТ</span>
+                    <br></br>
+                    <span>Годы обучения:&nbsp;2018&nbsp;&mdash;&nbsp;2020</span>
                   </div>
                   <br></br>
+                  <div>
+                    <span>Сибирский федеральный университет</span>
+                    <br></br>
+                    <span>Направление: ПМИ</span>
+                    <br></br>
+                    <span>
+                      Годы обучения: &nbsp;2021&nbsp;&mdash;&nbsp;2022
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="burger__subblock ">
+                <div className="burger__subtitle uppercase">Контакты</div>
+                <div className="burger__text burger__links-list">
+                  <div className="burger__row">
+                    <img src={mail} width={24} height={24} alt="" />
+                    <a href="mailto:midomen@yandex.ru">
+                      <span>midomen@yandex.ru</span>
+                    </a>
+                  </div>
                   <div className="burger__row">
                     <img src={github} width={24} height={24} alt="" />
                     <a
@@ -77,18 +94,27 @@ const FirstPage = () => {
                       rel="noreferrer"
                       href="https://github.com/YegorVn"
                     >
-                      <span>gitHub/YegorVn</span>
+                      <span>GitHub</span>
                     </a>
                   </div>
-                  <br></br>
                   <div className="burger__row">
                     <img src={hh} width={24} height={24} alt="" />
                     <a
                       target="_blank"
                       rel="noreferrer"
-                      href="https://krasnoyarsk.hh.ru/applicant/resumes?hhtmFrom=negotiations_item&hhtmFromLabel=header"
+                      href="https://krasnoyarsk.hh.ru/resume/af30ddabff078c7e570039ed1f306d4c61316e"
                     >
-                      <span>Внуков Егор</span>
+                      <span>Резюме на HH</span>
+                    </a>
+                  </div>
+                  <div className="burger__row">
+                    <img src={tg} width={24} height={24} alt="" />
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://t.me/yegorvn"
+                    >
+                      <span>Telegram</span>
                     </a>
                   </div>
                 </div>
@@ -101,10 +127,10 @@ const FirstPage = () => {
             <div className="burger__subtitle_rolledup">Основной стэк</div>
             <ul className="burger__tehlist">
               {[
-                { text: "React", color: "#9de7fb", icon: react },
-                { text: "Redux-Saga", color: "", icon: redux },
-                { text: "HTML5", color: "", icon: html },
-                { text: "CSS#", color: "", icon: css },
+                { text: "React", color: "#fff", icon: react },
+                { text: "Redux-Saga", color: "#707070", icon: redux },
+                { text: "HTML5", color: "#d85331", icon: html },
+                { text: "CSS3", color: "#0d3ea2", icon: css },
               ].map((el) => {
                 return (
                   <li className="burger__tehname" key={el.text}>
@@ -119,10 +145,19 @@ const FirstPage = () => {
               <a className="burger__link" href="mailto:midomen@yandex.ru">
                 <img src={mail} width={20} height={20} alt="" />
               </a>
-              <a className="burger__link" href="/">
+              <a
+                className="burger__link"
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/YegorVn">
                 <img src={github} width={24} height={24} alt="" />
               </a>
-              <a className="burger__link" href="/">
+              <a
+                className="burger__link"
+                target="_blank"
+                rel="noreferrer"
+                href="https://krasnoyarsk.hh.ru/resume/af30ddabff078c7e570039ed1f306d4c61316e"
+              >
                 <img src={hh} width={24} height={24} alt="" />
               </a>
             </div>

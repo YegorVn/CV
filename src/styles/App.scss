@@ -1,19 +1,27 @@
 @import './variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
 // @font-face {
 //     font-family: 'Saira';
 //     src: url('/fonts/Saira_Condensed/SairaCondensed-Regular.ttf') format('truetype'); 
 // }
 
 html, body, #root{
-    font-family: 'PT Sans', sans-serif;
-    font-family: 'Saira Condensed', sans-serif;
+    font-family: 'Jura', sans-serif;
+    font-weight: 500;
     height: 100vh !important;
     padding: 0;
     margin: 0;
     color: black;
-    
+}
+
+a{
+    text-decoration: none;
+    color: rgb(78, 78, 78);
+    letter-spacing: 0.05em;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 .uppercase{
@@ -23,11 +31,11 @@ html, body, #root{
 ::-webkit-scrollbar {
     width: 10px; /* ширина для вертикального скролла */
     height: 8px; /* высота для горизонтального скролла */
-    background-color: #ffffff;
+    background-color: #e0e0e0;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #e7e7e7;
+    background-color: #b4b4b4;
     border-radius: 9em;
 }
 

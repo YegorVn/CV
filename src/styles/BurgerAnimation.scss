@@ -19,6 +19,7 @@
     z-index: 1;
     width: 50%;
     height: 4px;
+    margin-left: 5px;
     margin-bottom: 5px;
     background: #424242;
     border-radius: 4px;
@@ -45,13 +46,13 @@
     background-color: #3a3a3a;
     transform: rotate(45deg) translate(5px);
     margin-top: 0px;
-    margin-left: 3px;
+    margin-left: 6px;
   }
 
   .burger-button__circle input:checked ~ #span2 {
     background-color: #3a3a3a;
     transform: rotate(495deg) translate(0px);   
-    margin-left: 3px;
+    margin-left: 6px;
   }
 
   .burger-button__circle input:checked ~ #span3 {

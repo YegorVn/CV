@@ -4,50 +4,60 @@ import "./styles/GalleryAnimation.scss";
 import Link from 'react-router-dom'
 import SecondPage from "./views/SecondPage";
 import FirstPage from "./views/FirstPage";
+import act1 from './images/screenshots/act1.png'
+import act2 from './images/screenshots/act2.png'
+import act3 from './images/screenshots/act3.png'
+import act4 from './images/screenshots/act4.png'
+import adm from './images/screenshots/adm.png'
+import nr1 from './images/screenshots/nr1.png'
+import nr2 from './images/screenshots/nr2.png'
+
 
 function App() {
   const data = [
     [
       {
-        title: "Проектик1",
-        tech: ["React", "NodeJs"],
-        links: ["https://www.google.ru/", "https://www.google.ru/"],
+        title: "Онлайн школа",
+        tech: ["React, Redux", "ReactBootstrap", "HTML, CSS"],
+        // links: ["https://www.google.ru/", "https://www.google.ru/"],
         tag: ["Commerical"],
+        text: "Верстка макета для разных устройств, логика приложения на стороне пользователя",
+        images: [act2, act1, act3, act4]
       },
       {
-        title: "Проектик2",
-        tech: ["React", "NodeJs"],
-        text: "Вместе с очередной волной коронавируса в Европу вернулись связанные с эпидемией мошенничества. Весной и летом прошлого года на пике.",
-        links: ["https://www.google.ru/", "https://www.google.ru/"],
+        title: "Nr-design",
+        tech: ["HTML, CSS, JS"],
+        text: "Правки по верстке",
         tag: ["Commerical"],
+        images: [nr1, nr2]
       },
       {
-        title: "Проектик3",
-        text: "asdasdasd",
-        tech: ["React", "NodeJs"],
-        links: ["https://www.google.ru/", "https://www.google.ru/"],
+        title: "CRUD",
+        tech: ["React, Redux", "Django"],
+        links: ["https://github.com/YegorVn/cards"],
         tag: ["Pet-project"],
       },
     ],
     [
       {
-        title: "Проектик4",
-        text: "Вместе с очередной волной коронавируса в Европу вернулись связанные с эпидемией мошенничества. Весной и летом прошлого года на пике.",
-        tech: ["React", "NodeJs"],
-        links: ["https://www.google.ru/", "https://www.google.ru/"],
+        title: "CodePen",
+        text: "Несколько небольших проектов на codepen",
+        tech: ["HTML, CSS, JS"],
+        links: ["https://codepen.io/midomen"],
         tag: ["Commerical"],
       },
       {
-        title: "Проектик5",
-        tech: ["React", "NodeJs"],
-        links: ["https://www.google.ru/", "https://www.google.ru/"],
-        tag: ["Pet-project"],
+        title: "Админка",
+        tech: ["React", "Redux"],
+        tag: ["Commerical"],
+        text: "Админка для онлайн школы",
+        images: [adm]
       },
       {
-        title: "Проектик6",
-        text: "Вместе с очередной волной коронавируса в Европу вернулись связанные с эпидемией мошенничества. Весной и летом прошлого года на пике.",
-        tech: ["React", "NodeJs"],
-        links: ["https://www.google.ru/", "https://www.google.ru/"],
+        title: "Поиск видео",
+        text: "Приложения для сохранения результатов поиска видео с Youtube",
+        tech: ["React", "NodeJs", "AntDesign", "Axios"],
+        links: ["https://github.com/YegorVn/sibdevvideos"],
         tag: ["Commerical"],
       },
     ],

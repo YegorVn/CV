@@ -33,7 +33,7 @@ export const Card = ({card, item, index, setCard, activeCard, inactiveCard}) => 
               }
               onClick={() => setCard("")}
             >
-              <img src={cross} width={30} height={30} alt="" />  
+              <img src={cross} width={30} height={30} alt="" />
             </button>
           </div>
 
@@ -45,29 +45,52 @@ export const Card = ({card, item, index, setCard, activeCard, inactiveCard}) => 
               })}
             </ul>
           </div>
-          
-          {card === item.title &&
+
+          {card === item.title && (
             <>
-              <div className="gallery__subtitle">Аннотация</div>
-              <div className="gallery__text">
-                {item.text}
-              </div>
+              {item.text && (
+                <>
+                  <div className="gallery__subtitle">Аннотация</div>
+                  <div className="gallery__text">{item.text}</div>
+                </>
+              )}
+              {item.links && (
+                <>
+                  <div className="gallery__subtitle">Ссылки</div>
+                  <div className="gallery__links">
+                    {item.links.map((elem) => {
+                      return (
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href={elem}
+                          key={elem}
+                        >
+                          {elem}
+                        </a>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
+              {item.images && (
+                <>
+                  <div className="gallery__subtitle">Скриншоты</div>
+                  <div className="gallery__screenshots">
+                    {item.images.map((elem) => {
+                      return (
+                        <img
+                          src={elem}
+                          alt=""
+                          className="gallery__screenshot"
+                        />
+                      );
+                    })}
+                  </div>
+                </>
+              )}
             </>
-          }
-          {card === item.title &&
-            <>
-              <div className="gallery__subtitle">Ссылки</div>
-              <div className="gallery__links">
-                {item.links.map((elem) => {
-                  return (
-                    <a href={"/"} key={elem}>
-                      {elem}
-                    </a>
-                  );
-                })}
-              </div>
-            </>
-          }
+          )}
           <button
             className={
               "gallery__button " + (card === item.title ? "d-none" : "")
